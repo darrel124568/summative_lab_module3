@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Dancing+Script:wght@400..700&family=Lobster&family=Supermercado+One&display=swap');
+
+.container h3 {
+    font-family: Lobster, cursive;
+    size: 2rem;
+    color: rgba(240, 171, 91, 0.795);
+    text-align: center;
+}
+
+.container p {
+    font-family: cursive;
+    color: rgba(234, 203, 167, 0.795);
+}
+
+.container .brand p {
+    text-align: center;
+}
+.container h5 {
+    font-family: 'Supermercado One';
+    color: rgba(240, 171, 91, 0.795);
+}
+.story img {
+  max-width: 60px;
+}
+
+.story {
+    display: flex;
+    font-size: 0.8rem;
+    margin-bottom: auto;
+    min-height: fit-content;
+}
+
+.team {
+    text-align: center;
+}
+.baristas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.baristas li {
+    list-style-type: none;
+}
+
+.baristas img {
+    width: 55%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+@media screen and (max-width: 640px) {
+    .story {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,30 @@
+.container {
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.container div {
+    flex: 1;
+    size: 2px;
+    font-size: 0.7rem;
+    margin: 1rem;
+    
+}
+
+.links {
+    color: white;
+    bottom: 0;
+    text-align: center;
+}
+
+.links :hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+}

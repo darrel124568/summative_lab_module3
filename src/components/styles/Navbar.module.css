@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+.container {
+  background-color: rgba(115, 115, 115, 0.8); /* Changed to 0.8 alpha for transparency */
+  min-height: fit-content;
+  width: 90vw;
+  max-width: 100vw;
+  padding: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border-radius: 20rem;
+  top: 20px;
+  left: 5%;
+  right: 10%;
+  animation-name: drop;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+
+a {
+    text-decoration: none;
+    color: rgba(26, 26, 26, 255); ;
+    margin: 0.6rem;
+}
+
+.Active {
+    background-color: rgba(229, 229, 229, 255);
+    border: none;
+    border-radius: 1rem;
+    padding: 0.35rem;
+}
+
+.contact {
+    background-color: black;
+    border-radius: 1rem;
+    padding: 0.35rem;
+    color: white;
+}
+
+.contactActive {
+    background-color: rgba(255, 255, 255, 255);
+    border-radius: 1rem;
+    padding: 0.35rem;
+}
+h4 {
+    font-size: 2rem;
+    font-family: 'dancing script', cursive;
+    color: rgb(234, 213, 199);
+    padding: 0;
+    margin: 0;
+}
+
+.hambuger {
+    display: none;
+}
+
+.hambuger :hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.inactiveContainer {
+ display: none;
+}
+
+@keyframes drop {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    75% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 640px) {
+ .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: none;
+    position: fixed;
+    z-index: 999;
+    background: rgba(0,0,0,0.8);
+    min-height: 100vh;
+    min-width: 100vw;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+ }   
+ .container div {
+    display: flex;
+    flex-direction: column;
+ }
+ .container div a {
+    color: white;
+ }
+ .contact {
+   background-color: black;
+   color: white;
+ }
+ .contactActive {
+    background-color: rgba(241, 235, 235, 0.8);
+    border-radius: 1rem;
+    padding: 0.35rem;
+    color: black;
+}
+h4 {
+    display: none;
+}
+.hambuger {
+    display: initial;
+    color: aliceblue;
+    background: transparent;
+    border: none;
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    z-index: 1000;
+}
+}

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Dancing+Script:wght@400..700&family=Lobster&family=Supermercado+One&display=swap');
+
+.container {
+    background-color: rgba(244, 208, 168, 0.858);
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation-name: in;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+
+.container div button {
+    font-family: 'Dancing Script';
+    background-color: rgba(219, 152, 77, 0.858);
+    margin: 10px;
+    border: none;
+    border-radius: 1rem;
+    max-width: fit-content;
+    font-size: 1.2rem;
+}
+
+
+
+@keyframes in {
+  0% {
+    transform: translateY(-100vw);
+  }
+
+  60% {
+    transform: translateY(10vw);
+  }
+
+  80% {
+    transform: translateY(-2vw);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
