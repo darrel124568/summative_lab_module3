@@ -45,7 +45,7 @@ export default function Footer() {
 </div>
     <div className={styles.links}>
         <hr />
-        <p>Connect with us 🌍</p>
+        <p>Connect with us </p>
 
         <a
             href="https://www.instagram.com/sleepyy_hollow_?igsh=MTUyN2hhd2xlZWc1eA=="

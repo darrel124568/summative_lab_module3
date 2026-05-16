@@ -24,7 +24,7 @@
     border: 1px solid rgba(212, 169, 81, 0.553);
     border-radius: 1.6rem;
     text-align: center;
-    color: rgba(138, 106, 59, 0.813);
+    color: rgba(227, 205, 172, 0.813);
     background: none;
     outline: none;
     min-height: fit-content;
@@ -33,28 +33,10 @@
 }
 
 .search {
-    margin-top: 10vh;
     margin: 10Vh 2vw;
-    min-height: 100vh;
+    max-height: fit-content;
+    position: sticky;
+    top: 15vh;
     backdrop-filter: blur(6px);
 }
 
-
-/* @media screen and (max-width: 640px) {
-    .search{
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: fixed;
-    z-index: 999;
-    background: rgba(0,0,0,0.8);
-    min-height: 100vh;
-    min-width: 100vw;
-    border-radius: 0;
-    top: 0;
-    left: 0;
-    }
-} */

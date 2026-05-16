@@ -1,14 +1,15 @@
 import styles from './styles/EditForm.module.css'
-import { useLocation, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useLocation, useNavigate} from 'react-router-dom'
+import { useState, useRef, useEffect } from 'react'
 
 import { useProductContext } from '../contexts/ProductContext'
 
 export default function EditForm() {
-    const {setDrinks} = useProductContext()
+    const {setData} = useProductContext()
     const location = useLocation()
     const drink = location.state
     const navigate = useNavigate()
+    const inputRef = useRef()
     const [formData, setFormData] = useState({
         name: drink.name,
         origin: drink.origin,
@@ -16,6 +17,11 @@ export default function EditForm() {
         price: drink.price,
         image: drink.image
     })
+
+    useEffect(()=> {
+        inputRef.current.focus()
+    }, [])
+
      function handleChange(e) {
         setFormData({...formData, [e.target.name]: e.target.value})
     }
@@ -27,11 +33,17 @@ export default function EditForm() {
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(formData)
         })
-        .then(r => r.json())
+        .then(r => {
+            if(!r.ok) {throw new Error(`Could not edit: r.status`)}
+            return r.json()
+        })
         .then(data => {
-            setDrinks(prev => prev.map(drink => drink.id !== data.id? drink: data))
+            setData(prev => prev.map(drink => drink.id !== data.id? drink: data))
             alert('Successfuly editted')
             navigate('/Shop', {replace: true})
+        })
+        .catch(error => {
+            alert(error)
         })
     }
     return(
@@ -42,7 +54,8 @@ export default function EditForm() {
             <h4>Name</h4>
              <input
             name='name'
-             type="text" 
+             type="text"
+             ref={inputRef} 
              value={formData.name} 
              onChange={e => handleChange(e)}
              required/>
@@ -93,3 +106,4 @@ export default function EditForm() {
         </>
     )
 }
+

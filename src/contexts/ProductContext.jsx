@@ -1,51 +1,43 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
+import { useFetchData } from "../customHooks/Fetch";
 
-const ProductContext = createContext()
-export function ProductProvider({children}) {
+const ProductContext = createContext();
 
-        const [drinks, setDrinks] = useState([])
-        const [locations, setLocations] = useState([])
-        const [query, setQuery] = useState('')
-    
-        useEffect(() => {
-    
-            const url =
-                locations.length > 0
-                    ? `http://localhost:3000/drinks?location_in=${locations.join(',')}`
-                    : 'http://localhost:3000/drinks'
-    
-            fetch(url)
-                .then(r => r.json())
-                .then(data => setDrinks(data))
-    
-        }, [locations])
-    
-        function handleCheckboxChange(e) {
-    
-            const value = Number(e.target.value)
-    
-            if (e.target.checked) {
-                setLocations(prev => [...prev, value])
-            } else {
-                setLocations(prev =>
-                    prev.filter(location => location !== value)
-                )
-            }
-        }
-    
-        function handleInputChange(e) {
-            setQuery(e.target.value)
-        }
-        
-        const filteredDrinks = query === ''? drinks: drinks.filter(drink => drink.name.toLowerCase().includes(query.toLowerCase()))
+export function ProductProvider({ children }) {
 
-    return(
-        <ProductContext.Provider value={{filteredDrinks, query, handleCheckboxChange, handleInputChange, setDrinks}}>
+    const [locations, setLocations] = useState([]);
+    const [query, setQuery] = useState('');
+
+    const url =
+        locations.length > 0
+            ? `http://localhost:3000/drinks?location_in=${locations.join(',')}`
+            : 'http://localhost:3000/drinks';
+
+    const { data: drinks, loading, setData } = useFetchData(url);
+
+    const filteredDrinks =
+        query === ''
+            ? drinks
+            : drinks.filter(drink =>
+                drink.name.toLowerCase().includes(query.toLowerCase())
+            );
+
+    return (
+        <ProductContext.Provider
+            value={{
+                loading,
+                filteredDrinks,
+                query,
+                setLocations,
+                setQuery,
+                setData
+            }}
+        >
             {children}
         </ProductContext.Provider>
-    )
+    );
 }
 
-export function useProductContext(){
-    return useContext(ProductContext)
+export function useProductContext() {
+    return useContext(ProductContext);
 }

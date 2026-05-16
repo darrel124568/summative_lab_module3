@@ -17,14 +17,12 @@ export default function App() {
     <Routes>
       <Route path='/' element = {<Home />} >
         <Route path='Contact' element = {<Contact />} />
+        <Route path='/About' element = {<About />} />   
       </Route>
       <Route path='/Shop' element = {<Shop />}>
       <Route path='Contact' element = {<Contact />}/>     
       </Route>
       <Route path='/AdminPortal' element = {<AdminPortal />} >
-      <Route path='Contact' element = {<Contact />} />
-      </Route>
-      <Route path='/About' element = {<About />} >
       <Route path='Contact' element = {<Contact />} />
       </Route>
       <Route path=':id' element = {<EditForm />}/>

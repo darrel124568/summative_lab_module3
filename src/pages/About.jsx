@@ -1,6 +1,4 @@
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
-import { Outlet } from "react-router-dom"
+
 import styles from '../pages/styles/About.module.css'
 import darrel from '../assets/darrel.jpg'
 import maya from '../assets/maya.jpg'
@@ -10,7 +8,6 @@ export default function About() {
 
     return (
         <>
-        <Navbar />
         <div className= {styles.container}>
         <div className={styles.brand}>
             <h3>Good coffee.  Real connections</h3>
@@ -144,8 +141,6 @@ export default function About() {
             </p>
         </div>
         </div >
-        <Outlet />
-        <Footer />
         </>
     )
 }

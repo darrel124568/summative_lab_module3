@@ -1,16 +1,38 @@
 import ProductCard from "./ProductCard";
 import styles from './styles/ProductList.module.css'
 import { useProductContext } from "../contexts/ProductContext";
+import { useRef, useEffect } from "react";
 
 export default function ProductList() {
+    const { loading, filteredDrinks, query, setLocations, setQuery} = useProductContext()
+    const inputRef = useRef()
+    
+     useEffect(()=> {
+        inputRef.current.focus()
+    }, [])
 
-    const {filteredDrinks, query, handleCheckboxChange, handleInputChange, setDrinks} = useProductContext()
+
+    function handleCheckboxChange(e) {
+    const value = Number(e.target.value)
+    if (e.target.checked) {
+        setLocations(prev => [...prev, value])
+    } else {
+        setLocations(prev =>
+            prev.filter(location => location !== value)
+        )
+    }
+    }
+
+    function handleInputChange(e) {
+            setQuery(e.target.value)
+     }
     return (
 
         <>
         <div className={styles.container}>
             <div className={styles.search}>
                 <input 
+                ref={inputRef}
                 type="text" 
                 placeholder="Type your search" 
                 value={query} 
@@ -59,12 +81,12 @@ export default function ProductList() {
             </div>
 
             <div className={styles.cardContainer}>
+                {loading && <h1>Loading...</h1>}
                 {
                     filteredDrinks.map(drink => (
                         <ProductCard
                             key={drink.id}
                             drink={drink}
-                            setDrinks= {setDrinks}
                         />
                     ))
                 }
