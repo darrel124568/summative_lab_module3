@@ -43,7 +43,7 @@
       : styles.inactiveContainer
         } >
         <div>
-        <NavLink to= '/' className={({isActive}) => isActive ? styles.Active : styles.NavLink}> <IoHome/>Home</NavLink> 
+        <NavLink to= '/Home' className={({isActive}) => isActive ? styles.Active : styles.NavLink}> <IoHome/>Home</NavLink> 
         <NavLink to= '/Shop' className={({isActive}) => isActive ? styles.Active : styles.NavLink}><FaDatabase/>Shop Now</NavLink> 
         <NavLink to= '/AdminPortal' className={({isActive}) => isActive ? styles.Active : styles.NavLink}><RiAdminFill />AdminPortal</NavLink>
         </div>  

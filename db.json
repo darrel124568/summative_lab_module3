@@ -115,5 +115,11 @@
       "image": "https://picsum.photos/200/300/?blur=1"
     }
   ],
+  "users":[
+    {
+      "id": "1",
+      "name": "admin",
+     "password": "1234"}
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
