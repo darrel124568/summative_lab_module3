@@ -18,6 +18,11 @@
     animation-fill-mode: both;
 }
 
+.container :hover {
+  transform: scale(1.05);
+}
+
+
 .container div button {
     font-family: 'Dancing Script';
     background-color: rgba(219, 152, 77, 0.858);
