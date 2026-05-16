@@ -91,19 +91,19 @@
       "location": 4
     },
     {
-      "id": "zNU8DNzud2E",
-      "name": "Test2",
-      "origin": "Nairobi",
-      "description": "Test 2",
-      "price": "KSH: 3.98",
-      "image": "https://placehold.co/600x400?font=roboto"
+      "id": "AmRqHDDX_xE",
+      "name": "Darrellitta",
+      "origin": "Kenya",
+      "description": "really happy it works",
+      "price": "25",
+      "image": ""
     },
     {
-      "id": "dpH2kdHeGtw",
-      "name": "Darrelitta",
-      "origin": "Kenya",
-      "description": "Quite a handfull",
-      "price": "25",
+      "id": "JADs8Ap6Ctw",
+      "name": "Test3",
+      "origin": "Ireland",
+      "description": "Hot coffee blended with sugar, cream, and Irish whiskey for a rich flavor.",
+      "price": "2",
       "image": "https://picsum.photos/200/300/?blur=1"
     }
   ],

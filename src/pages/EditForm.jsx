@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from 'react'
 import { useProductContext } from '../contexts/ProductContext'
 
 export default function EditForm() {
-    const {setDrinks} = useProductContext()
+    const {setData} = useProductContext()
     const location = useLocation()
     const drink = location.state
     const navigate = useNavigate()
@@ -38,7 +38,7 @@ export default function EditForm() {
             return r.json()
         })
         .then(data => {
-            setDrinks(prev => prev.map(drink => drink.id !== data.id? drink: data))
+            setData(prev => prev.map(drink => drink.id !== data.id? drink: data))
             alert('Successfuly editted')
             navigate('/Shop', {replace: true})
         })
