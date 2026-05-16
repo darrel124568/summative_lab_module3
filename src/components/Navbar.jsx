@@ -5,7 +5,6 @@
  import { IoHome } from "react-icons/io5";
  import { FaDatabase } from "react-icons/fa";
  import { RiAdminFill } from "react-icons/ri";
- import { FcAbout } from "react-icons/fc";
  import { FaPhoneAlt } from "react-icons/fa";
  import { GiHamburgerMenu } from "react-icons/gi"
  import { FaTimes } from "react-icons/fa";
@@ -52,10 +51,10 @@
         <h4>We are coffee </h4>
         </div> 
         <div>
-        <NavLink to= '/About' className={({isActive}) => isActive ? styles.Active : styles.NavLink}><FcAbout/>About</NavLink>
-        <NavLink to= 'Contact' className={({isActive}) => isActive ? styles.contactActive : styles.contact}><FaPhoneAlt style={{margin : 2}}/>Contact</NavLink> 
+        <NavLink to= 'Contact' className={({isActive}) => isActive ? styles.contactActive : styles.contact}><FaPhoneAlt style={{margin : 2}}/>Contact Us</NavLink> 
          </div>             
         </div>
         </>
     )
+    
  }

@@ -1,8 +1,10 @@
 import { GoContainer } from 'react-icons/go'
 import styles from './styles/ProductCard.module.css'
 import { useNavigate } from 'react-router-dom'
+import { useProductContext } from '../contexts/ProductContext'
 
-export default function ProductCard({drink, setDrinks}) {
+export default function ProductCard({drink}) {
+    const {setDrinks} = useProductContext()
     const navigate = useNavigate()
    function handleClick(drink) {
     navigate(`/${drink.id}`, {state: drink})
@@ -12,10 +14,16 @@ export default function ProductCard({drink, setDrinks}) {
             method: 'DELETE',
             headers: {'Content-Type':'application/json'}          
         })
-        .then(r => r.json())
+        .then(r => {
+            if(!r.ok) {throw new Error(`Could not delete: ${r.status}`)}
+            return r.json()
+        })
         .then(data => {
             setDrinks(prev => prev.filter(drink => drink.id !== data.id))
             alert('Deleted successfully')
+        })
+        .catch((error) => {
+            alert(error)
         })
     }
 

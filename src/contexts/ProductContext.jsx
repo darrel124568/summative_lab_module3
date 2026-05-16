@@ -6,6 +6,7 @@ export function ProductProvider({children}) {
         const [drinks, setDrinks] = useState([])
         const [locations, setLocations] = useState([])
         const [query, setQuery] = useState('')
+        const [loading, setLoading] = useState(true)
     
         useEffect(() => {
     
@@ -15,32 +16,23 @@ export function ProductProvider({children}) {
                     : 'http://localhost:3000/drinks'
     
             fetch(url)
-                .then(r => r.json())
+                .then(r => {
+                    if(!r.ok) {throw new Error(`could not fetch: ${r.status}`)}                     
+                    return r.json()
+                })                    
                 .then(data => setDrinks(data))
+                .catch(error => {
+                    Alert(error)
+                })
+                .finally(setLoading(false))
     
-        }, [locations])
-    
-        function handleCheckboxChange(e) {
-    
-            const value = Number(e.target.value)
-    
-            if (e.target.checked) {
-                setLocations(prev => [...prev, value])
-            } else {
-                setLocations(prev =>
-                    prev.filter(location => location !== value)
-                )
-            }
-        }
-    
-        function handleInputChange(e) {
-            setQuery(e.target.value)
-        }
+        }, [locations])   
+        
         
         const filteredDrinks = query === ''? drinks: drinks.filter(drink => drink.name.toLowerCase().includes(query.toLowerCase()))
 
     return(
-        <ProductContext.Provider value={{filteredDrinks, query, handleCheckboxChange, handleInputChange, setDrinks}}>
+        <ProductContext.Provider value={{loading, filteredDrinks, query, setLocations, setQuery, setDrinks}}>
             {children}
         </ProductContext.Provider>
     )

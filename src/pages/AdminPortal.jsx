@@ -1,11 +1,12 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
-import { Outlet } from "react-router-dom"
+import { Outlet} from "react-router-dom"
 import styles from './styles/AdminPortal.module.css'
-import { useState, useId } from "react"
+import { useState, useId, useRef, useEffect } from "react"
 import { useProductContext } from "../contexts/ProductContext"
 
 export default function AdminPortal() {
+    const inputRef = useRef()
     const id = useId()
     const {setDrinks} = useProductContext()
     const [formData, setFormData] = useState({
@@ -14,8 +15,12 @@ export default function AdminPortal() {
         origin: '',
         description: '',
         price: '',
-        image: 'https://placehold.co/600x400?font=roboto'
+        image: ''
     })
+
+    useEffect(()=> {
+        inputRef.current.focus()
+    }, [])
 
     function handleChange(e) {
         setFormData({...formData, [e.target.name]: e.target.value})
@@ -28,19 +33,25 @@ export default function AdminPortal() {
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(formData)
         })
-        .then(r => r.json())
+        .then(r => {
+            if(!r.ok) {throw new Error(`could not post: ${r.status}`)}
+            return r.json()
+        })
         .then(data => {
-            setDrinks(prev => prev.map(drink => drink.id !== data.id? drink: data))
-            alert('Successfuly editted')
+            setDrinks(prev => [...prev, data])
+            alert('Successfuly Added')
             setFormData({
                 id: id,
                 name: '',
                 origin: '',
                 description: '',
                 price: '',
-                image: 'https://placehold.co/600x400?font=roboto'
+                image: ''
             }
             )
+        })
+        .catch((error) => {
+            alert(error)
         })
     }
 
@@ -52,8 +63,10 @@ export default function AdminPortal() {
             <label >
             <h4>Name</h4>
              <input
+             ref={inputRef}
             name='name'
              type="text" 
+             placeholder="Enter name of the drink"
              value={formData.name} 
              onChange={e => handleChange(e)}
              required/>
@@ -64,6 +77,7 @@ export default function AdminPortal() {
             <input
             name='origin'
              type="text" 
+             placeholder="Enter origin of the drink"
              value={formData.origin} 
              onChange={e => handleChange(e)}
              required/>
@@ -74,6 +88,7 @@ export default function AdminPortal() {
              <input 
             name='description'
             type="text" 
+            placeholder="Enter a brief description of the drink"
             value={formData.description} 
             onChange={e => handleChange(e)}
             required/>
@@ -83,7 +98,8 @@ export default function AdminPortal() {
             <h4>Price</h4>
             <input 
             name='price'
-            type="text" 
+            type="number" 
+            placeholder="Enter price of the drink"
             value={formData.price}
             onChange={e => handleChange(e)}
             required/>

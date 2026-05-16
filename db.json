@@ -89,6 +89,22 @@
       "price": "9.12",
       "image": "",
       "location": 4
+    },
+    {
+      "id": "zNU8DNzud2E",
+      "name": "Test2",
+      "origin": "Nairobi",
+      "description": "Test 2",
+      "price": "KSH: 3.98",
+      "image": "https://placehold.co/600x400?font=roboto"
+    },
+    {
+      "id": "dpH2kdHeGtw",
+      "name": "Darrelitta",
+      "origin": "Kenya",
+      "description": "Quite a handfull",
+      "price": "25",
+      "image": "https://picsum.photos/200/300/?blur=1"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

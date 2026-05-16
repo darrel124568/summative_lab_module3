@@ -10,10 +10,15 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 10%;
-    animation-name: in;
+    /* animation-name: in;
     animation-duration: 1.5s;
     animation-timing-function: ease;
     animation-fill-mode: both;
+    transition: transform 0.4s ease; */
+}
+
+.hero :hover {
+  transform: scale(1.05);
 }
 
 .catchPhrase {
@@ -34,15 +39,32 @@
    color: rgb(236, 183, 146); 
 }
 
-.hero img {
-    max-width: 8rem;
+.image {
     background: transparent;
-    animation-name: in;
+    margin: 1rem;
+    font-size: 4rem;
+    color: rgb(223, 201, 185);
+    /* animation-name: in;
     animation-duration: 1s;
     animation-delay: 0.5s;
     animation-timing-function: ease;
-    animation-fill-mode: both;
+    animation-fill-mode: both; */
 }
+
+.about {
+  background-color: rgb(126, 65, 21);
+  color: rgb(223, 201, 185);
+  padding: 0.4rem;
+  border-radius: 0.6rem;
+  font-family: 'Dancing Script';
+  border: none;
+}
+
+.about:active {
+  transform: scale(0.98);
+}
+
+
 
 @keyframes in {
   0% {
