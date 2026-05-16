@@ -91,19 +91,27 @@
       "location": 4
     },
     {
-      "id": "AmRqHDDX_xE",
-      "name": "Darrellitta",
-      "origin": "Kenya",
-      "description": "really happy it works",
-      "price": "25",
-      "image": ""
-    },
-    {
-      "id": "JADs8Ap6Ctw",
+      "id": "cZ7KmiJZhUo",
       "name": "Test3",
-      "origin": "Ireland",
+      "origin": "Nairobi",
       "description": "Hot coffee blended with sugar, cream, and Irish whiskey for a rich flavor.",
       "price": "2",
+      "image": "https://picsum.photos/200/300/?blur=1"
+    },
+    {
+      "id": "XRP66_0lD4Y",
+      "name": "Test3",
+      "origin": "Nairobi",
+      "description": "Hot coffee blended with sugar, cream, and Irish whiskey for a rich flavor.",
+      "price": "2",
+      "image": "https://picsum.photos/200/300/?blur=1"
+    },
+    {
+      "id": "OBgCE3L595I",
+      "name": "Kahawa",
+      "origin": "Kenya",
+      "description": "Local concentrated coffee",
+      "price": "2.33",
       "image": "https://picsum.photos/200/300/?blur=1"
     }
   ],

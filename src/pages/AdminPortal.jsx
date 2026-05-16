@@ -8,7 +8,7 @@ import { useProductContext } from "../contexts/ProductContext"
 export default function AdminPortal() {
     const inputRef = useRef()
     const id = useId()
-    const {setDrinks} = useProductContext()
+    const {setData} = useProductContext()
     const [formData, setFormData] = useState({
         id: id,
         name: '',
@@ -38,7 +38,7 @@ export default function AdminPortal() {
             return r.json()
         })
         .then(data => {
-            setDrinks(prev => [...prev, data])
+            setData(prev => [...prev, data])
             alert('Successfuly Added')
             setFormData({
                 id: id,

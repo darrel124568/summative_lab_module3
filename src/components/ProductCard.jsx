@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useProductContext } from '../contexts/ProductContext'
 
 export default function ProductCard({drink}) {
-    const {setDrinks} = useProductContext()
+    const {setData} = useProductContext()
     const navigate = useNavigate()
    function handleClick(drink) {
     navigate(`/${drink.id}`, {state: drink})
@@ -19,7 +19,7 @@ export default function ProductCard({drink}) {
             return r.json()
         })
         .then(data => {
-            setDrinks(prev => prev.filter(drink => drink.id !== data.id))
+            setData(prev => prev.filter(drink => drink.id !== data.id))
             alert('Deleted successfully')
         })
         .catch((error) => {
