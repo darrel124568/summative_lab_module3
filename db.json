@@ -1,0 +1,95 @@
+{
+  "drinks": [
+    {
+      "id": "1",
+      "name": "Espresso",
+      "description": "A strong and concentrated coffee served in small shots with a rich flavor and creamy crema.",
+      "origin": "Italy",
+      "price": 2.99,
+      "image": "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a",
+      "location": 1
+    },
+    {
+      "id": "2",
+      "name": "Cappuccino",
+      "description": "A smooth espresso-based drink topped with steamed milk and thick milk foam.",
+      "origin": "Italy",
+      "price": 4.5,
+      "image": "https://images.unsplash.com/photo-1534778101976-62847782c213",
+      "location": 2
+    },
+    {
+      "id": "4",
+      "name": "Americano",
+      "description": "Espresso diluted with hot water for a smoother and lighter taste.",
+      "origin": "United States",
+      "price": 3.5,
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
+      "location": 1
+    },
+    {
+      "id": "3",
+      "name": "Latte",
+      "description": "A creamy coffee drink made with espresso and a large amount of steamed milk.",
+      "origin": "France",
+      "price": 4.99,
+      "image": "https://images.unsplash.com/photo-1561047029-3000c68339ca",
+      "location": 2
+    },
+    {
+      "id": "5",
+      "name": "Mocha",
+      "description": "A chocolate-flavored coffee drink blended with espresso, milk, and cocoa.",
+      "origin": "Yemen",
+      "price": 5.25,
+      "image": "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e",
+      "location": 3
+    },
+    {
+      "id": "6",
+      "name": "Macchiato",
+      "description": "Espresso marked with a small amount of milk foam for a bold but balanced taste.",
+      "origin": "Italy",
+      "price": 4.2,
+      "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348",
+      "location": 1
+    },
+    {
+      "id": "7",
+      "name": "Flat White",
+      "description": "A velvety coffee drink with espresso and microfoam milk for a smooth texture.",
+      "origin": "Australia",
+      "price": 4.8,
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93",
+      "location": 4
+    },
+    {
+      "id": "8",
+      "name": "Cold Brew",
+      "description": "Coffee brewed slowly in cold water for a refreshing and less acidic flavor.",
+      "origin": "Japan",
+      "price": 5,
+      "image": "https://images.unsplash.com/photo-1517701604599-bb29b565090c",
+      "location": 3
+    },
+    {
+      "id": "9",
+      "name": "Affogato",
+      "description": "A dessert-style coffee made by pouring hot espresso over vanilla ice cream.",
+      "origin": "Italy",
+      "price": 6.25,
+      "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735",
+      "location": 4
+    },
+    {
+      "id": "10",
+      "name": "Irish Coffee",
+      "description": "Hot coffee blended with sugar, cream, and Irish whiskey for a rich flavor.",
+      "origin": "Ireland",
+      "price": "9.12",
+      "image": "",
+      "location": 4
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

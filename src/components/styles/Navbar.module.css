@@ -16,7 +16,7 @@
   right: 10%;
   animation-name: drop;
   animation-duration: 1s;
-  animation-timing-function: ease;
+  animation-timing-function: ease-in-out;
   animation-fill-mode: both;
 }
 
@@ -119,7 +119,7 @@ h4 {
     padding: 0.35rem;
     color: black;
 }
-h4 {
+.container h4 {
     display: none;
 }
 .hambuger {

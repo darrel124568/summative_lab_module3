@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Dancing+Script:wght@400..700&family=Lobster&family=Supermercado+One&display=swap');
+
+.container {
+    display: flex;
+}
+
+.cardContainer {
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.checkBoxes {
+    font-family: Lobster;
+    display: flex;
+    flex-direction: column;
+    color: rgba(223, 148, 36, 0.813);
+    padding: 0.3rem;
+    margin: 0.3rem;
+}
+
+.searchinput {
+    border: 1px solid rgba(212, 169, 81, 0.553);
+    border-radius: 1.6rem;
+    text-align: center;
+    color: rgba(138, 106, 59, 0.813);
+    background: none;
+    outline: none;
+    min-height: fit-content;
+    padding: 0.3rem;
+    backdrop-filter: blur(2px);
+}
+
+.search {
+    margin-top: 10vh;
+    margin: 10Vh 2vw;
+    min-height: 100vh;
+    backdrop-filter: blur(6px);
+}
+
+
+/* @media screen and (max-width: 640px) {
+    .search{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    background: rgba(0,0,0,0.8);
+    min-height: 100vh;
+    min-width: 100vw;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+    }
+} */

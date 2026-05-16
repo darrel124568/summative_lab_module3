@@ -1,30 +1,29 @@
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
-import { Outlet } from "react-router-dom"
-import styles from './styles/AdminPortal.module.css'
-import { useState, useId } from "react"
-import { useProductContext } from "../contexts/ProductContext"
+import styles from './styles/EditForm.module.css'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
-export default function AdminPortal() {
-    const id = useId()
+import { useProductContext } from '../contexts/ProductContext'
+
+export default function EditForm() {
     const {setDrinks} = useProductContext()
+    const location = useLocation()
+    const drink = location.state
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
-        id: id,
-        name: '',
-        origin: '',
-        description: '',
-        price: '',
-        image: 'https://placehold.co/600x400?font=roboto'
+        name: drink.name,
+        origin: drink.origin,
+        description: drink.description,
+        price: drink.price,
+        image: drink.image
     })
-
-    function handleChange(e) {
+     function handleChange(e) {
         setFormData({...formData, [e.target.name]: e.target.value})
     }
 
     function handleSubmit(e) {
         e.preventDefault()
-        fetch(`http://localhost:3000/drinks`, {
-            method: 'POST',
+        fetch(`http://localhost:3000/drinks/${drink.id}`, {
+            method: 'PATCH',
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify(formData)
         })
@@ -32,21 +31,11 @@ export default function AdminPortal() {
         .then(data => {
             setDrinks(prev => prev.map(drink => drink.id !== data.id? drink: data))
             alert('Successfuly editted')
-            setFormData({
-                id: id,
-                name: '',
-                origin: '',
-                description: '',
-                price: '',
-                image: 'https://placehold.co/600x400?font=roboto'
-            }
-            )
+            navigate('/Shop', {replace: true})
         })
     }
-
-    return (
+    return(
         <>
-        <Navbar />
         <div className={styles.container}>
             <form onSubmit={e => handleSubmit(e)}>
             <label >
@@ -90,7 +79,7 @@ export default function AdminPortal() {
             </label>
             
             <label >
-            <h4>Image URL</h4>
+            <h4>Image URL(optional)</h4>
             <input 
             name='image'
             type='text' 
@@ -98,11 +87,9 @@ export default function AdminPortal() {
             value={formData.image}
             onChange={e => handleChange(e)}/>
             </label> <br />          
-            <button type='submit'>Add Coffee</button>
+            <button type='submit'>Confirm & Edit</button>
             </form>
         </div>
-        <Outlet />
-        <Footer />
         </>
     )
 }
