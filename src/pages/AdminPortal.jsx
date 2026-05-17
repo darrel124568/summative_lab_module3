@@ -2,24 +2,19 @@ import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { Outlet} from "react-router-dom"
 import styles from './styles/AdminPortal.module.css'
-import { useState, useId, useRef, useEffect } from "react"
+import { useState, useRef, useEffect } from "react"
 import { useProductContext } from "../contexts/ProductContext"
 
 export default function AdminPortal() {
     const inputRef = useRef()
-    const id = useId()
-    const location = Math.floor(Math.random() * 4) + 1
     const {setData} = useProductContext()
     const [formData, setFormData] = useState({
-        id: id,
         name: '',
         origin: '',
         description: '',
         price: '',
-        image: '',
-        location: location
+        image: ''
     })
-    
 
     useEffect(()=> {
         inputRef.current.focus()
@@ -28,7 +23,6 @@ export default function AdminPortal() {
     function handleChange(e) {
         setFormData({...formData, [e.target.name]: e.target.value})
     }
-    
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -45,7 +39,6 @@ export default function AdminPortal() {
             setData(prev => [...prev, data])
             alert('Successfuly Added')
             setFormData({
-                id: id,
                 name: '',
                 origin: '',
                 description: '',

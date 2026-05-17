@@ -13,7 +13,7 @@ export default function AdminLogin() {
     const inputRef = useRef()
 
     const {data} = useFetchData('http://localhost:3000/users')
-    const user = data[0]
+    const user = data[0]||{ "id": "1", "name": "admin", "password": 1234 }
 
     useEffect(()=> {
         inputRef.current.focus()
