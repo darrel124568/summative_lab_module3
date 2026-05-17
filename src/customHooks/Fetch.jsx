@@ -14,7 +14,7 @@ export function useFetchData (url) {
         .catch(error => {
             Alert(`fetch error: ${error}`)
         })
-        .finally(setLoading(false))       
+        .finally(()=>setLoading(false))       
     }, [url])
      return {data, loading, setData}
 }

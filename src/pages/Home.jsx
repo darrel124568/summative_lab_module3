@@ -17,7 +17,7 @@ export default function Home() {
             setClicked(!clicked)
         }
         else{
-            navigate('/')
+            navigate('/Home')
             setClicked(!clicked)
         }
     }

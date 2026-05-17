@@ -1,6 +1,6 @@
     import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-
+    import AdminLogin from "./pages/AdminLogin"
     import Home from './pages/Home'
     import Shop from './pages/Shop'
     import AdminPortal from './pages/AdminPortal'
@@ -15,9 +15,10 @@ export default function App() {
     <BrowserRouter>
     <ProductProvider>
     <Routes>
-      <Route path='/' element = {<Home />} >
+      <Route path="/" element ={<AdminLogin/>}/>
+      <Route path='/home' element = {<Home />} >
         <Route path='Contact' element = {<Contact />} />
-        <Route path='/About' element = {<About />} />   
+        <Route path='About' element = {<About />} />   
       </Route>
       <Route path='/Shop' element = {<Shop />}>
       <Route path='Contact' element = {<Contact />}/>     

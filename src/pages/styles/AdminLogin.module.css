@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Dancing+Script:wght@400..700&family=Lobster&family=Supermercado+One&display=swap');
+
+.container {
+    background-color: rgba(230, 163, 87, 0.249);
+    text-align: center;
+    border-radius: 2rem;
+    backdrop-filter: blur(3px);
+    position: fixed;
+    top: 2vh;
+    bottom: 10vh;
+    left: 30vw;
+    min-width: 50%;
+    min-height: fit-content;
+    padding: 1%;
+}
+
+.container:hover {
+    transform: scale(1.01);
+}
+
+.container :hover {
+    transform: scale(1.04);
+    min-height: fit-content;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem;
+}
+
+.container button {
+    background-color: rgb(113, 87, 26);
+    border-radius: 1.2rem;
+    min-width: 50%;
+    max-width: 50%;
+    padding: 0.2rem;
+    font-family: 'Supermercado One';
+    font-size: 1.2rem;
+    border: none;
+    margin-bottom: 8%;
+    margin-top: 2%;
+}
+
+.button:active {
+    scale: (0.98);
+}
+
+.container input{
+    color: rgba(79, 46, 8, 0.772);
+    font-family: cursive;
+    border: 1px solid rgba(79, 46, 8, 0.772);
+    border-radius: 2rem;
+    text-align: center;
+    margin: 0.6rem;
+    min-width: 80%;
+    padding: 0.6rem;
+    font-size: 1.2rem;
+}

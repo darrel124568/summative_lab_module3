@@ -19,7 +19,7 @@ export function ProductProvider({ children }) {
         query === ''
             ? drinks
             : drinks.filter(drink =>
-                drink.name.toLowerCase().includes(query.toLowerCase())
+                drink.name?.toLowerCase().includes(query.toLowerCase())
             );
 
     return (

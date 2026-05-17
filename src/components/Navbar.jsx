@@ -11,7 +11,7 @@
  
  export default function Navbar() {
     const [clicked, setclicked] = useState(false)
-    const [windowSize, setwindowSize] = useState(window.innerWidth >= 640)
+    const [windowSize, setwindowSize] = useState(()=> window.innerWidth >= 640)
     function handleClick() {
         setclicked(!clicked)
     }
@@ -43,7 +43,7 @@
       : styles.inactiveContainer
         } >
         <div>
-        <NavLink to= '/' className={({isActive}) => isActive ? styles.Active : styles.NavLink}> <IoHome/>Home</NavLink> 
+        <NavLink to= '/Home' className={({isActive}) => isActive ? styles.Active : styles.NavLink}> <IoHome/>Home</NavLink> 
         <NavLink to= '/Shop' className={({isActive}) => isActive ? styles.Active : styles.NavLink}><FaDatabase/>Shop Now</NavLink> 
         <NavLink to= '/AdminPortal' className={({isActive}) => isActive ? styles.Active : styles.NavLink}><RiAdminFill />AdminPortal</NavLink>
         </div>  
