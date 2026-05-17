@@ -8,6 +8,7 @@ import { useProductContext } from "../contexts/ProductContext"
 export default function AdminPortal() {
     const inputRef = useRef()
     const id = useId()
+    const location = Math.floor(Math.random() * 4) + 1
     const {setData} = useProductContext()
     const [formData, setFormData] = useState({
         id: id,
@@ -15,8 +16,10 @@ export default function AdminPortal() {
         origin: '',
         description: '',
         price: '',
-        image: ''
+        image: '',
+        location: location
     })
+    
 
     useEffect(()=> {
         inputRef.current.focus()
@@ -25,6 +28,7 @@ export default function AdminPortal() {
     function handleChange(e) {
         setFormData({...formData, [e.target.name]: e.target.value})
     }
+    
 
     function handleSubmit(e) {
         e.preventDefault()

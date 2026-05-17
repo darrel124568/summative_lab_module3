@@ -11,7 +11,7 @@
  
  export default function Navbar() {
     const [clicked, setclicked] = useState(false)
-    const [windowSize, setwindowSize] = useState(window.innerWidth >= 640)
+    const [windowSize, setwindowSize] = useState(()=> window.innerWidth >= 640)
     function handleClick() {
         setclicked(!clicked)
     }
