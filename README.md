@@ -1,18 +1,85 @@
-# React + Vite
+# Summative Lab Module 3
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React-based web application built as part of the Module 3 summative assessment.
+(Website for  a coffee shop.)
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Built with React
+- Responsive and modern UI
+- Dynamic data fetching
+- Reusable components
+- React Router navigation
+- Organized project structure
+- Search and filtering functionality
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- React
+- JavaScript
+- CSS Modules
+- React Router
+- JSON Server
+- Vite
 
-Note: This will impact Vite dev & build performances.
+## Project Structure
 
-## Expanding the ESLint configuration
+```bash
+src/
+│── components/
+│── customHooks/
+│── pages/
+│── styles/
+│── context/
+│── assets/
+└── main.jsx
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Getting Started
+
+### 1 Clone the repository
+
+```bash
+git clone https://github.com/darrel124568/summative_lab_module3.git
+```
+
+### 2️ Navigate into the project folder
+
+```bash
+cd summative_lab_module3
+```
+
+### 3️ Install dependencies
+
+```bash
+npm install
+```
+
+### 4️ Start the development server
+
+```bash
+npm run dev
+```
+
+## Running the JSON Server
+
+```bash
+npx json-server --watch db.json --port 3000
+```
+
+##  Contributing
+
+Contributions, suggestions, and improvements are welcome.
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to your branch
+5. Open a Pull Request
+
+## License
+Darrel Ndubi
+
+##  Author
+
+Created by Darrel 🚀
